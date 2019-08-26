@@ -1,0 +1,11 @@
+.idea/
+*.pyc
+.vscode
+.coverage
+htmlcov
+env/
+__pycache__
+migrations/*
+!migrations/__init__.py
+*.sqlite3
+*.pickle

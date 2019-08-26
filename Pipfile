@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+chatterbot = "*"
+djangorestframework = "*"
+chatterbot-corpus = {git = "https://github.com/gunthercox/chatterbot-corpus.git"}
+graphene-django = "*"
+
+[requires]
+python_version = "3.6"
