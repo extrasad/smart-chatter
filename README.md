@@ -57,8 +57,8 @@ $ coverage html
 ```
 That command will generate a folder named "htmlcov", open it, look in it for the "index.html" file and open it in a browser to check the results.
 
-#### Training the bot
-To train the bot, so it can learn to communicate run these commands
+# Training the bot
+To train the bot, so it can learn to communicate run these commands.
 The bot will learn through conversations and training.
 The commands accept one mandatory argument, that is the time do you want to train the bot.
 The example below, will train the bot 10 times.
