@@ -9,7 +9,7 @@ It requires Python 3.6
 Create a virtualenv to isolate package dependencies locally 
 ```sh
 pipenv install
-pipenv shell  # On Windows use `env\Scripts\activate`
+pipenv shell
 ```
 
 #### Installing dependencies
