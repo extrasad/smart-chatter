@@ -18,4 +18,4 @@ chatterbot-corpus = {git = "https://github.com/gunthercox/chatterbot-corpus.git"
 graphene-django = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.6.8"
