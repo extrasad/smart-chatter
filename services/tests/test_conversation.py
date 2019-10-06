@@ -13,3 +13,18 @@ class ConversationTestCase(APITestCase):
         """
         response = self.client.get("/api/v1/conversation")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_sent_message_graphql(self):
+        """
+        Ensure we can send a message in graphql api
+        """
+        client = Client(schema)
+        query = """
+        {
+          conversation {
+            name
+          }
+        }
+        """
+        executed = client.execute(query)
+        self.assertEqual(executed["data"]["conversation"]["name"], "Smart Bot")
