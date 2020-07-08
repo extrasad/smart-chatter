@@ -65,7 +65,3 @@ The example below, will train the bot 10 times.
 ```sh
 $ python manage.py trainer 10
 ```
-Another command to train the bot
-```sh
-$ python manage.py trainer_list 10
-```

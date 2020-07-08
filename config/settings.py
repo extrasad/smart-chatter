@@ -60,15 +60,6 @@ CHATTERBOT = {
     "name": "Smart Bot",
     "storage_adapter": "chatterbot.storage.SQLStorageAdapter",
     "database_uri": "sqlite:///smart_bot_database.sqlite3",
-    "logic_adapters": [
-        "chatterbot.logic.MathematicalEvaluation",
-        "chatterbot.logic.TimeLogicAdapter",
-        "chatterbot.logic.BestMatch",
-    ],
-    "preprocessors": [
-        "chatterbot.preprocessors.clean_whitespace",
-        "chatterbot.preprocessors.convert_to_ascii",
-    ],
 }
 
 ROOT_URLCONF = "config.urls"
