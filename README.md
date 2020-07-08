@@ -3,7 +3,7 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 ## Description
-SmartChatter is a project to practice rest implementation of the library chatterbot.
+SmartChatter is a project to practice rest and graphql implementation of the library chatterbot.
 Just fork and add your custom .yml file with the train data and start using it.
 
 ## Installation
