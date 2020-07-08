@@ -2,14 +2,17 @@
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
+## Description
+SmartChatter is a project to practice rest implementation of the library chatterbot.
+Just fork and add your custom .yml file with the train data and start using it.
+
 ## Installation
-It requires Python 3.6 
+It requires Python 3.6 or higher.
 
 #### Virtual Environment
 Create a virtualenv to isolate package dependencies locally 
 ```sh
-pipenv install
-pipenv shell
+poetry install
 ```
 
 #### Installing dependencies
@@ -37,7 +40,7 @@ We're now ready to test the API. Let's fire up the server from the command line.
 $ python manage.py runserver
 ```
 ### Database
-We are using Sqlite3 for development related efficacy. In production, we use PostgresDB.
+We are using Sqlite3 for development related efficacy.
 
 ### Continuous testing
 
@@ -56,12 +59,3 @@ To see coverage report,in a html presentation,about the results of the test, run
 $ coverage html
 ```
 That command will generate a folder named "htmlcov", open it, look in it for the "index.html" file and open it in a browser to check the results.
-
-# Training the bot
-To train the bot, so it can learn to communicate run these commands.
-The bot will learn through conversations and training.
-The commands accept one mandatory argument, that is the time do you want to train the bot.
-The example below, will train the bot 10 times.
-```sh
-$ python manage.py trainer 10
-```

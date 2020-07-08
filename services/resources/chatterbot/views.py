@@ -1,9 +1,12 @@
+import typing
+
 from chatterbot import ChatBot
 from chatterbot.ext.django_chatterbot import settings
 from chatterbot.trainers import ChatterBotCorpusTrainer
+from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework import generics
+from rest_framework.request import Request
 
 
 class ChatterMessage(generics.CreateAPIView):
@@ -20,7 +23,9 @@ class ChatterMessage(generics.CreateAPIView):
         "chatterbot.corpus.spanish",
     )
 
-    def post(self, request, *args, **kwargs):
+    def post(
+        self, request: Request, *args: typing.Dict, **kwargs: typing.Dict
+    ) -> Response:
         """
         Return a response to the statement in the posted data.
         * The JSON data should contain a 'text' attribute.
@@ -33,20 +38,3 @@ class ChatterMessage(generics.CreateAPIView):
         response_data = response.serialize()
 
         return Response(response_data, status=status.HTTP_200_OK)
-
-
-class Conversation(generics.RetrieveAPIView):
-    chatterbot = ChatBot(**settings.CHATTERBOT)
-    trainer = ChatterBotCorpusTrainer(chatterbot)
-    trainer.train(
-        "chatterbot.corpus.english",
-        "core.trainer_data.custom",
-        "core.trainer_data.feelings",
-        "chatterbot.corpus.spanish",
-    )
-
-    def get(self, request, *args, **kwargs):
-        """
-        Return data corresponding to the current conversation.
-        """
-        return Response({"name": self.chatterbot.name}, status=status.HTTP_200_OK)

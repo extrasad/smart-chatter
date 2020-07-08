@@ -1,26 +1,23 @@
+import typing
+
 import graphene
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.ext.django_chatterbot import settings
 
 
-class Conversation(graphene.ObjectType):
-    name = graphene.String()
-
-
 class Message(graphene.ObjectType):
+    """Type for message response."""
+
     response = graphene.String()
 
 
 class Query:
-    conversation = graphene.Field(Conversation)
     message = graphene.Field(Message, message=graphene.String(required=True))
 
-    def resolve_conversation(self, info):
-        bot = ChatBot(**settings.CHATTERBOT)
-        return Conversation(name=bot.name)
+    def resolve_message(self, info: typing.Dict, message: str) -> Message:
+        """Respond message from an user for a given chatbot."""
 
-    def resolve_message(self, info, message):
         bot = ChatBot(**settings.CHATTERBOT)
         trainer = ChatterBotCorpusTrainer(bot)
         trainer.train(
